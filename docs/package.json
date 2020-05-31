@@ -1,0 +1,21 @@
+{
+    "name": "vr-website",
+    "description": "Website with Blog Posts in VR",
+    "authors": "Rody Davis",
+    "version": "1.0.0",
+    "main": "index.html",
+    "scripts": {
+        "start": "webpack-dev-server --mode development",
+        "build": "webpack --mode production --devtool source-map"
+    },
+    "dependencies": {
+        "aframe-markdown": "^0.1.3"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.26.3",
+        "gh-pages": "^2.0.1",
+        "webpack": "^4.28.3",
+        "webpack-cli": "^3.2.0",
+        "webpack-dev-server": "^3.1.14"
+    }
+}

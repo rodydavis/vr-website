@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rody Davis - VR</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-extras@5.0.1/dist/aframe-extras.controls.min.js"></script>
+    <script
+        src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+    <script src="node_modules/aframe-markdown/dist/aframe-markdown.min.js"></script>
+</head>
+
+<body>
+    <!-- <a-scene markdown="normalFont: fonts/Roboto-msdf.json; boldFont: fonts/Roboto-Bold-msdf.json;" background="color: white;"> -->
+    <a-scene>
+        <a-assets>
+            <img id="boxTexture" src="https://i.imgur.com/mYmmbrp.jpg" />
+            <img id="skyTexture" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg" />
+            <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg" />
+            <a-asset-item id="md" src="posts/example.md"></a-asset-item>
+            <a-asset-item id="post1" src="posts/online_demo.md"></a-asset-item>
+            <a-mixin id="offset" position="0 0 -1">
+                </a-asset-item>
+        </a-assets>
+
+
+        <a-entity position="0 1.6 0">
+            <a-entity rotation="0 0 0">
+                <a-entity markdown="src: #post1; wrapCount: 75" mixin="offset" material="color: grey"></a-entity>
+            </a-entity>
+        </a-entity>
+
+        <a-sky src="#skyTexture"></a-sky>
+        <a-entity movement-controls="fly: true; speed: 0.1;">
+            <a-entity position="0 1.6 0" look-controls camera></a-entity>
+        </a-entity>
+    </a-scene>
+</body>
+
+</html>
